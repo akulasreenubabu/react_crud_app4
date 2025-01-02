@@ -1,3 +1,4 @@
+/* 
 .App {
   text-align: center;
 }
@@ -35,4 +36,51 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.app-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.add-user-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.add-user-container input {
+  padding: 8px;
+  font-size: 14px;
+  flex: 1;
+}
+.add-user-container input::placeholder {
+  color: #a39999;
+}
+.search-bar {
+  width: 300px;
+  height: 24px;
+  font-size: 14px;
+  
+}
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.users-table th, .users-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left; 
+}
+.users-table th {
+  background-color: #f4f4f4;
+}
+.users-table td {
+  text-transform: capitalize;
 }
