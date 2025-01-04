@@ -8,6 +8,8 @@ const App = ()=>{
   const [searchQuery, setSearchQuery] = useState("")
   const [editUser, setEditUser] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
 
   useEffect(()=>{
     fetchUsers()
@@ -47,8 +49,10 @@ const App = ()=>{
           fetchUsers()
           setIsModalOpen(false)
           setEditUser(null)
+          setSuccessMessage(response.data.message)
         }else{
-          console.log("error while updating user data", JSON.parse(response))
+          setErrorMessage(response.data.message)
+          console.log("error while updating user data", JSON.stringify(response.data))
         }
 
       }catch(error){
@@ -76,6 +80,9 @@ const App = ()=>{
         className="search-bar" ></input> 
       </div>
     </header>
+    {successMessage&&(
+      <div></div>
+    )}
     <table className="users-table">
         <thead>
           <tr>
@@ -114,7 +121,7 @@ const App = ()=>{
             }}>
                ✖
             </button>
-            <h2>Edit user</h2>
+            <h2>Edit Member</h2>
             <label>Name*</label>
             <input type="text"
             value={editUser.name}
