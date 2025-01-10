@@ -154,3 +154,29 @@ text-align: right;
   margin: 20px auto;
   display: block;
 }
+.success-message,
+.error-message{
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.success-message{
+  background-color: #aef3be;
+  color: #155724;
+}
+.error-message{
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.success-message button,
+.error-message button{
+  font-size: 16px;
+  line-height: 16px;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
